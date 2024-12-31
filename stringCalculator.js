@@ -3,7 +3,8 @@ class StringCalculator {
     if (!numbers) {
       return 0;
     }
-
+    // Replace newlines with commas
+    numbers = numbers.replace(/\n/g, ",");
     const numArray = numbers.split(",");
     let sum = 0;
 
@@ -23,4 +24,5 @@ const calculator = new StringCalculator();
 // Test Cases:
 console.log(calculator.add("")); // Output: 0
 console.log(calculator.add("1")); // Output: 1
-console.log(calculator.add("1,5,6,9,8,5")); // Output: 34
+console.log(calculator.add("1,5")); // Output: 6
+console.log(calculator.add("1\n2,3,6\n")); // Output: 12
